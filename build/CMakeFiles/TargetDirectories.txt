@@ -1,0 +1,3 @@
+/home/oem/Dokumente/gtk/build/CMakeFiles/hello.dir
+/home/oem/Dokumente/gtk/build/CMakeFiles/edit_cache.dir
+/home/oem/Dokumente/gtk/build/CMakeFiles/rebuild_cache.dir

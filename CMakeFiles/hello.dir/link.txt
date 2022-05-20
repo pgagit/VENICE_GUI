@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/hello.dir/gui.c.o -o hello 

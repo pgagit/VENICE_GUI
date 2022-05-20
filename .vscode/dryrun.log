@@ -1,0 +1,22 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/oem/Dokumente/gtk'
+/usr/bin/cmake -S/home/oem/Dokumente/gtk -B/home/oem/Dokumente/gtk --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/oem/Dokumente/gtk/CMakeFiles /home/oem/Dokumente/gtk//CMakeFiles/progress.marks
+make -s -f CMakeFiles/Makefile2 all
+make[1]: Entering directory '/home/oem/Dokumente/gtk'
+make -s -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/depend
+make[2]: Entering directory '/home/oem/Dokumente/gtk'
+cd /home/oem/Dokumente/gtk && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/oem/Dokumente/gtk /home/oem/Dokumente/gtk /home/oem/Dokumente/gtk /home/oem/Dokumente/gtk /home/oem/Dokumente/gtk/CMakeFiles/hello.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/oem/Dokumente/gtk'
+make -s -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/build
+make[2]: Entering directory '/home/oem/Dokumente/gtk'
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/oem/Dokumente/gtk/CMakeFiles --progress-num=1 "Building C object CMakeFiles/hello.dir/gui.c.o"
+/usr/bin/cc    -MD -MT CMakeFiles/hello.dir/gui.c.o -MF CMakeFiles/hello.dir/gui.c.o.d -o CMakeFiles/hello.dir/gui.c.o -c /home/oem/Dokumente/gtk/gui.c
+/usr/bin/cmake -E cmake_echo_color --switch= --green --bold --progress-dir=/home/oem/Dokumente/gtk/CMakeFiles --progress-num=2 "Linking C executable hello"
+/usr/bin/cmake -E cmake_link_script CMakeFiles/hello.dir/link.txt --verbose=
+make[2]: Leaving directory '/home/oem/Dokumente/gtk'
+/usr/bin/cmake -E cmake_echo_color --switch= --progress-dir=/home/oem/Dokumente/gtk/CMakeFiles --progress-num=1,2 "Built target hello"
+make[1]: Leaving directory '/home/oem/Dokumente/gtk'
+/usr/bin/cmake -E cmake_progress_start /home/oem/Dokumente/gtk/CMakeFiles 0
+make: Leaving directory '/home/oem/Dokumente/gtk'
+ 
