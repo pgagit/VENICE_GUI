@@ -17,31 +17,50 @@ static void print_hello(GtkWidget *widget, gpointer data) {
 
 static void activate(GtkApplication *app, gpointer user_data) {
   GtkWidget *window;
-  GtkWidget *button,*button2;
-  GtkWidget *button_box;
+  // create buttons
+  GtkWidget *button, *button2;
+  GtkWidget *button_box, *button_box2;
 
+  // window
   window = gtk_application_window_new(app);
   gtk_window_set_title(GTK_WINDOW(window), "Window");
-  gtk_window_set_default_size(GTK_WINDOW(window), 200, 200);
+  gtk_window_set_default_size(GTK_WINDOW(window), 500, 500);
   //
   button_box = gtk_button_box_new(GTK_ORIENTATION_HORIZONTAL);
   gtk_container_add(GTK_CONTAINER(window), button_box);
+  //
+  button_box2 = gtk_button_box_new(GTK_ORIENTATION_HORIZONTAL);
+  gtk_container_add(GTK_CONTAINER(window), button_box2);
   int test = 2;
   char a[] = "hellox world";
+  char b[] = "LINK UP";
   button = gtk_button_new_with_label(a);
+  button2 = gtk_button_new_with_label(b);
+// onclick1
   g_signal_connect(button, "clicked", G_CALLBACK(print_hello), NULL);
   g_signal_connect_swapped(button, "clicked", G_CALLBACK(gtk_widget_destroy),
                            window);
   gtk_container_add(GTK_CONTAINER(button_box), button);
-
+// onclick2
+   g_signal_connect(button2, "clicked", G_CALLBACK(print_hello), NULL);
+  g_signal_connect_swapped(button2, "clicked", G_CALLBACK(gtk_widget_destroy),
+                           window);
+  gtk_container_add(GTK_CONTAINER(button_box2), button2);
+//SHOW
   gtk_widget_show_all(window);
 }
 
 int main(int argc, char **argv) {
+  // create new app!
   GtkApplication *app;
   int status;
   printf("test");
+  //###############################
   // serial port
+  // ### here put in device names
+  // maybe even to
+  // but better put in a mask for input
+  // make sure other devices are not already openeing this ports
   int serial_port = open("/dev/ttyACM1", O_RDWR); // e.g. arduino
   // Check for errors
   if (serial_port < 0) {
@@ -123,11 +142,11 @@ int main(int argc, char **argv) {
 
   close(serial_port);
 
-  //--------
+  //--------#####################-  GUI
 
   app = gtk_application_new("org.gtk.example", G_APPLICATION_FLAGS_NONE);
   g_signal_connect(app, "activate", G_CALLBACK(activate), NULL);
-  status = g_application_run(G_APPLICATION(app), argc, argv);
+  status = g_application_run(G_APPLICATION(app), argc, argv); // start it..
   g_object_unref(app);
 
   return status;
